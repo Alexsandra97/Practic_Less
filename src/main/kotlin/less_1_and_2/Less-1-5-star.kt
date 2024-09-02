@@ -1,8 +1,8 @@
 package less_1_and_2
 
-fun main() {
+const  val TIME = 60
 
-    val TIME = 60
+fun main() {
 
     val seconds: Int = 6480
 
