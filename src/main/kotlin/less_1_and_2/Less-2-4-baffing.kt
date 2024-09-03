@@ -1,15 +1,17 @@
 package less_1_and_2
 
+const val percent = 100
+
 fun main() {
 
     val temporaryGain = 20
     val crystals = 7
     val ironOre = 11
 
-    val bonusCruystals: Int = ((crystals * temporaryGain) / 100).toInt()
-    val bonusIronOre: Int = ((temporaryGain * ironOre) / 100).toInt()
+    val bonusCrystals: Int = ((crystals * temporaryGain) / percent).toInt()
+    val bonusIronOre: Int = ((temporaryGain * ironOre) / percent).toInt()
 
-    println("Получено $bonusCruystals бонусный кристалл")
+    println("Получено $bonusCrystals бонусный кристалл")
     println("Получено $bonusIronOre бонусной железной руды")
 
 }
