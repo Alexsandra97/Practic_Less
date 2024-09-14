@@ -1,11 +1,12 @@
 package less_3
 
-fun main(){
+fun main() {
 
     val number1 = 8
     var number2 = 0
 
-    println("""$number1 * ${++number2} = ${number2 * number1}
+    println(
+        """$number1 * ${++number2} = ${number2 * number1}
                |$number1 * ${++number2} = ${number2 * number1}
                |$number1 * ${++number2} = ${number2 * number1}
                |$number1 * ${++number2} = ${number2 * number1}
@@ -14,13 +15,8 @@ fun main(){
                |$number1 * ${++number2} = ${number2 * number1}
                |$number1 * ${++number2} = ${number2 * number1}
                |$number1 * ${++number2} = ${number2 * number1}
-               |$number1 * ${++number2} = ${number2 * number1}""".trimMargin() )
-
-
-
-
-
-
+               |$number1 * ${++number2} = ${number2 * number1}""".trimMargin()
+    )
 
 
 }
