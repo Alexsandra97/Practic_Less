@@ -9,7 +9,9 @@ fun main() {
     val weighrCargo2 = 50
     val volumeCargo2 = 100
 
-    println("Груз с весом $weighrCargo1 кг и объемом $volumeCargo1 л Соответствует категории 'Averege': ${(MIN_WEIGHT_AVERAGE < weighrCargo1 && MAX_WEIGHT_AVERAGE >= weighrCargo1) && MAX_VOLUME_AVERAGE > volumeCargo1}")
-    println("Груз с весом $weighrCargo2 кг и объемом $volumeCargo2 л Соответствует категории 'Averege': ${(MIN_WEIGHT_AVERAGE < weighrCargo2 && MAX_WEIGHT_AVERAGE >= weighrCargo2) && MAX_VOLUME_AVERAGE > volumeCargo2}")
+    println("Груз с весом $weighrCargo1 кг и объемом $volumeCargo1 л Соответствует категории 'Averege': " +
+            "${(MIN_WEIGHT_AVERAGE < weighrCargo1 && MAX_WEIGHT_AVERAGE >= weighrCargo1) && MAX_VOLUME_AVERAGE > volumeCargo1}")
+    println("Груз с весом $weighrCargo2 кг и объемом $volumeCargo2 л Соответствует категории 'Averege': " +
+            "${(MIN_WEIGHT_AVERAGE < weighrCargo2 && MAX_WEIGHT_AVERAGE >= weighrCargo2) && MAX_VOLUME_AVERAGE > volumeCargo2}")
 
 }
