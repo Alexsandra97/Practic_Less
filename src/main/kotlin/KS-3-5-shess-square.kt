@@ -2,12 +2,8 @@
 fun main() {
 
     val chessMove = "D2-D4;0"
-    val fromWhere = chessMove.substringBefore("-")
-    val where = (chessMove.substringAfter("-")).substringBefore(";")
-    val strokeNumber = chessMove.substringAfter(";")
+    val fromWhere = chessMove.split("-", ";", limit = 3)
 
-    println(fromWhere)
-    println(where)
-    println(strokeNumber)
+    for (where in fromWhere)  println(where)
 
 }
