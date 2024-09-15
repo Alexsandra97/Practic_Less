@@ -8,13 +8,13 @@ fun main() {
     var whereVertical = "E"
     var strokeNumber = 1
 
-    println("$fromWhereVertical$fromWhereHorizon-$whereVertical$whereHorizon;$strokeNumber")
+    println("[$fromWhereVertical$fromWhereHorizon-$whereVertical$whereHorizon;$strokeNumber]")
 
     fromWhereVertical = "D"
     whereVertical = "D"
     fromWhereHorizon = 2
     whereHorizon = fromWhereHorizon
 
-    println("$fromWhereVertical$fromWhereHorizon-$whereVertical${++whereHorizon};${++strokeNumber}")
+    println("[$fromWhereVertical$fromWhereHorizon-$whereVertical${++whereHorizon};${++strokeNumber}]")
 
 }
