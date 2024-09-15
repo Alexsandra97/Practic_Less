@@ -1,16 +1,15 @@
 fun main() {
 
-    val exercisesHands = 1
-    val exercisesLegs = 0
-    val exercisesBack = 0
-    val exercisesAbs = 1
+    val exercisesHandsAndAbs = 1
+    val exercisesLegsAndBack = 0
     val trainingDay = 5
+    val odd = trainingDay % 2
 
     val whatExercises = """
-Упражнения для рук:    ${(trainingDay % 2) == exercisesHands}
-Упражнения для ног:    ${(trainingDay % 2) == exercisesLegs}
-Упражнения для спины:  ${(trainingDay % 2) == exercisesBack}
-Упражнения для пресса: ${(trainingDay % 2) == exercisesAbs}
+Упражнения для рук:    ${odd == exercisesHandsAndAbs}
+Упражнения для ног:    ${odd == exercisesLegsAndBack}
+Упражнения для спины:  ${odd == exercisesLegsAndBack}
+Упражнения для пресса: ${odd == exercisesHandsAndAbs}
  """
 
     println(whatExercises)
