@@ -22,6 +22,4 @@ fun main() {
 
     println("Корабль может выходить в плаванье? $permissionToSwim")
 
-
-
 }
