@@ -4,10 +4,9 @@ fun main() {
     println("Список ингредиентов: ${ingredientsDish.contentToString()} ")
 
     println("Какой ингредиент хотите заменить?")
-    var replacementIngredient = readln().toString()
+    var replacementIngredient = readln()
 
-    val containsIngredient = ingredientsDish.contains(replacementIngredient)
-    if (containsIngredient == false) {
+    if (ingredientsDish.indexOf(replacementIngredient) < 0) {
         println("Такого ингредиента в рецепте нет")
         return
     } else {
