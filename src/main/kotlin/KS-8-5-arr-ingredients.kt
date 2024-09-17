@@ -1,15 +1,9 @@
-import kotlin.collections.contentToString
-
 fun main() {
 
     println("Сколько будет элементов?")
-    var sumIngredients: Int = readln().toInt()
-    var ingredients: Array<String> = arrayOf()
+    val sumIngredients: Int = readln().toInt()
 
-    for (i in 1..sumIngredients) {
-        ingredients += readln().toString()
-    }
-
+    val ingredients = Array(sumIngredients, {readln()})
     println(ingredients.contentToString())
 
 }
