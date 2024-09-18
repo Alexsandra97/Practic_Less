@@ -1,12 +1,12 @@
 fun main() {
-
+    var minPasswordLength = 6
     var passwordLength: Int
     do {
         println("Задайте длину пароля от 6 символов")
         passwordLength = readln().toInt()
-        if (passwordLength < 6)
+        if (passwordLength < minPasswordLength)
             println("Длина пароля меньше 6.")
-    } while (passwordLength < 6)
+    } while (passwordLength < minPasswordLength)
 
     var passwordUser = ""
     var symbolPassword: MutableList<Int> = mutableListOf()
