@@ -1,31 +1,24 @@
 fun main() {
-    var minPasswordLength = 6
+    val minPasswordLength = 6
     var passwordLength: Int
     do {
-        println("Задайте длину пароля от 6 символов")
+        println("Задайте длину пароля от $minPasswordLength символов")
         passwordLength = readln().toInt()
         if (passwordLength < minPasswordLength)
-            println("Длина пароля меньше 6.")
+            println("Длина пароля меньше $minPasswordLength.")
     } while (passwordLength < minPasswordLength)
 
-    var passwordUser = ""
-    var symbolPassword: MutableList<Int> = mutableListOf()
+    var passwordUser: MutableList<String> = mutableListOf()
+    val sumRange = ('A'..'Z') + ('a'..'z') + ('0'..'9')
 
-    do {
-        passwordUser = ""
-        symbolPassword.clear()
+    passwordUser.add(('A'..'Z').random().toString())
+    passwordUser.add(('a'..'z').random().toString())
+    passwordUser.add(('0'..'9').random().toString())
 
-        for (i in 1..passwordLength) {
-            var variantSymbol = (1..3).random()
-            symbolPassword.add(variantSymbol)
-            when (variantSymbol) {
-                1 -> passwordUser = ('0'..'9').random().toString() + passwordUser
-                2 -> passwordUser = ('a'..'z').random().toString() + passwordUser
-                3 -> passwordUser = ('A'..'Z').random().toString() + passwordUser
-            }
-        }
-    } while ((symbolPassword.contains(1) != true) || (symbolPassword.contains(2) != true) || (symbolPassword.contains(3) != true))
+    for (i in 4..passwordLength) {
+        passwordUser.add(sumRange.random().toString())
+    }
 
-    println(passwordUser)
+    println(passwordUser.shuffled())
 
 }
