@@ -1,16 +1,9 @@
 fun main() {
 
     println("Сколько секунд нужно засечь?")
-    var markSecond: Int = readln().toInt()
+    var markSecond: Long = readln().toLong()
 
-    var timerSecond = 0
-
-    while (markSecond > timerSecond) {
-
-        println(timerSecond++)
-        Thread.sleep(1000)
-    }
-
-println("Прошло $markSecond секунд")
+    Thread.sleep(1000 * markSecond)
+    println("Прошло $markSecond секунд")
 
 }
