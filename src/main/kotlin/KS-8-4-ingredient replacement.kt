@@ -5,11 +5,12 @@ fun main() {
 
     println("Какой ингредиент хотите заменить?")
     var replacementIngredient = readln()
+    val resultIndexOf = ingredientsDish.indexOf(replacementIngredient)
 
-    if (ingredientsDish.indexOf(replacementIngredient) >= 0) {
+    if (resultIndexOf >= 0) {
         println("Какой ингридиент хотите добавить?")
         val newIngredient = readln().toString()
-        ingredientsDish[ingredientsDish.indexOf(replacementIngredient)] = newIngredient
+        ingredientsDish[resultIndexOf] = newIngredient
     } else {
         println("Такого ингредиента в рецепте нет")
         return
