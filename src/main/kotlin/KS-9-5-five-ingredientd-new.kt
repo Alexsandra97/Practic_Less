@@ -1,22 +1,20 @@
 const val LENGTH_LIST = 5
 
 fun main() {
-    var finalListIngredients = ""
     var ingredients: MutableSet<String> = mutableSetOf()
+    var firstElement = ""
 
     do {
         ingredients.add(readln())
     } while (ingredients.size != LENGTH_LIST)
 
-    val sortIngredientList = ingredients.sorted()
+    val sortIngredientList: MutableList<String> = ingredients.sorted() as MutableList<String>
     for (i in sortIngredientList) {
         if (sortIngredientList.indexOf(i) == 0) {
             val firstLetter = i.first().toString()
-            val firstElement = i.replace(firstLetter, firstLetter.uppercase())
-            finalListIngredients += firstElement
-        } else
-
-            finalListIngredients += ", " + i
+            firstElement = i.replace(firstLetter, firstLetter.uppercase())
+        }
     }
-    println(finalListIngredients)
+    sortIngredientList[0] = firstElement
+    println(sortIngredientList.joinToString())
 }
