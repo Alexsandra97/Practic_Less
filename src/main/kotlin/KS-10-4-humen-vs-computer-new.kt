@@ -1,4 +1,4 @@
-fun rollDice_(player: String): Int {
+fun rollDice(player: String): Int {
 
     val resultRoll = (1..6).random()
     println("На кубике $player выпало: $resultRoll ")
@@ -21,10 +21,10 @@ fun main() {
 
         var decisionPlayer = ""
         var player = "человека"
-        val resultHuman = rollDice_(player = player)
+        val resultHuman = rollDice(player = player)
 
         player = "компьютера"
-        val resultComputer = rollDice_(player = player)
+        val resultComputer = rollDice(player = player)
 
         if (resultComputer > resultHuman) println("Победила машина")
         else if (resultComputer < resultHuman) {
