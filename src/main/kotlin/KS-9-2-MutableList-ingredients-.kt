@@ -5,7 +5,7 @@ fun main() {
 
     println("Желаете добавить еще?")
     val answer: String = readln().toString()
-    if (answer == "да") {
+    if (answer.equals("да", ignoreCase = true))  {
         println("Какой ингредиент вы хотите добавить?")
         val userIngredient: String = readln().toString()
         mutablelistIngredients.add(userIngredient)
