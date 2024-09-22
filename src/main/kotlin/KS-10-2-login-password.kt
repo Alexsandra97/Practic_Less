@@ -1,18 +1,16 @@
-fun lengthValidation() {
+fun checkLength() {
 
-    do {
         var onCheck = readln()
         if (onCheck.length < 4) println("Логин или пароль недостаточно длинные")
-    } while (onCheck.length < 4)
 }
 
 fun main() {
 
     println("Придумайте логин:")
-    val login = lengthValidation()
+    val login = checkLength()
 
     println("Введите пароль")
-    val password = lengthValidation()
+    val password = checkLength()
 
     println("Добро пожаловать!")
 
