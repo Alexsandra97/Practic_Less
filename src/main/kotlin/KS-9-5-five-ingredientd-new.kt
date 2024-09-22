@@ -11,8 +11,7 @@ fun main() {
     val sortIngredientList: MutableList<String> = ingredients.sorted() as MutableList<String>
     for (i in sortIngredientList) {
         if (sortIngredientList.indexOf(i) == 0) {
-            val firstLetter = i.first().toString()
-            firstElement = i.replace(firstLetter, firstLetter.uppercase())
+            firstElement = i.replaceFirstChar { it.uppercase() }
         }
     }
     sortIngredientList[0] = firstElement
