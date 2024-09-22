@@ -1,5 +1,4 @@
-
-fun passwordGeneration(lengthPassword: Int): String {
+fun generatePassword(lengthPassword: Int): String {
 
     var password: String = ""
     val range = "!\"#\$%&'()*+,-./ "
@@ -7,10 +6,10 @@ fun passwordGeneration(lengthPassword: Int): String {
     for (i in 1..lengthPassword) {
         if ((i % 2) != 0) {
             var symbol = ('0'..'9').random().toString()
-            password = symbol + password
+            password += symbol
         } else {
-            var symbol= (range).random().toString()
-            password = symbol + password
+            var symbol = (range).random().toString()
+            password += symbol
         }
     }
     return password
@@ -19,8 +18,8 @@ fun passwordGeneration(lengthPassword: Int): String {
 fun main() {
 
     println("Введите длину пароля")
-    val lengthPassword =readln().toInt()
-    println(passwordGeneration(lengthPassword))
+    val lengthPassword = readln().toInt()
+    println(generatePassword(lengthPassword))
 
 }
 
