@@ -6,10 +6,11 @@ fun rollDice(player: String): Int {
 
 }
 
-fun resultGame(sumWinGame: Int): Int {
+fun conductRound(): String {
 
-    var sumWinGame = sumWinGame + 1
-    return sumWinGame
+    println("Хотите сыграть еще раз? Введите да/нет")
+    var decisionPlayer = readln()
+    return decisionPlayer
 
 }
 
@@ -19,7 +20,7 @@ fun main() {
 
     do {
 
-        var decisionPlayer = ""
+
         var player = "человека"
         val resultHuman = rollDice(player = player)
 
@@ -29,13 +30,10 @@ fun main() {
         if (resultComputer > resultHuman) println("Победила машина")
         else if (resultComputer < resultHuman) {
             println("Победило человечество")
-            sumWinGame = resultGame(sumWinGame)
-
+            sumWinGame++
         } else println("Ничья")
 
-        println("Хотите сыграть еще раз? Введите да/нет")
-        decisionPlayer = readln()
-
+        var decisionPlayer = conductRound()
     } while (decisionPlayer == "да")
 
     println("Выигрышных матчей: $sumWinGame")
