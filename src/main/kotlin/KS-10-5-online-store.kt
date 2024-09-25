@@ -10,12 +10,14 @@ fun main() {
     println("Введите пароль:")
     val passwordUser = readln()
 
-    val accessToken = authorization(loginUser, passwordUser)
-    println(getShoppingCart(accessToken))
+    val accessToken = assignToken(loginUser, passwordUser)
+    val result = getShoppingCart(accessToken)
+    if (result != "") println(result)
+    else println("Авторизация не удалась")
 
 }
 
-fun authorization(loginUser: String, passwordUser: String): String? {
+fun assignToken(loginUser: String, passwordUser: String): String? {
 
     var accessToken: String? = ""
     if (loginUser == USER_LOGIN && passwordUser == USER_PASSWORD) {
@@ -29,7 +31,7 @@ fun authorization(loginUser: String, passwordUser: String): String? {
 
 fun getShoppingCart(accessToken: String?): String {
 
-    var shoppingCart = "Авторизация не удалась"
+    var shoppingCart = ""
     if (accessToken != null) {
         println("Ваша корзина:")
         shoppingCart = SHOPPING_CART
