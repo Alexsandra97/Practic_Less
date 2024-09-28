@@ -1,4 +1,4 @@
-class RoomCard(
+class р(
     val cover: String,
     val name: String,
     val listParticipants: ListParticipants = ListParticipants()
@@ -16,7 +16,7 @@ class RoomCard(
 
 }
 
-class ListParticipants(
+class ListParticipant(
     var nickname: String = "",
     var status: String = "",
 ) {
