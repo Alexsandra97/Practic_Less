@@ -1,4 +1,4 @@
-class DirectoryPhone (var name: String,var phoneNumber: Long,var company: String?) {
+class DirectoryPhone (val name: String,val phoneNumber: Long,val company: String?) {
     fun printDirectory() {
         println("Имя: ${name}\nНомер: ${phoneNumber}\nКомпания: ${company?: "<Не указано>"}")
     }
