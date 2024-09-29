@@ -1,4 +1,4 @@
-class PhoneDirectory (var name: String,var phoneNumber: Long,var company: String?)
+class PhoneDirectory(val name: String, val phoneNumber: Long, val company: String?)
 
 fun main() {
 
