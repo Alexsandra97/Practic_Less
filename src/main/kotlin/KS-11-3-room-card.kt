@@ -1,14 +1,12 @@
 fun main() {
 
 
-
     val roomCard: RoomCard = RoomCard(
         cover = "cover_image.png",
         name = "Комната 1",
         listParticipants = mutableListOf()
 
     )
-
 
 
     roomCard.addParticipant()
