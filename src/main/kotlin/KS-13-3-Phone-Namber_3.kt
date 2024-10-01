@@ -1,6 +1,6 @@
 class DirectoryPhoneThree(val name: String, val phoneNumber: Long, val company: String?) {
     fun printDirectory() {
-        println("Имя: ${name}\nНомер: ${phoneNumber}\nКомпания: ${company ?: "<Не указано>"}")
+        println("Имя: ${name}\nНомер: ${phoneNumber}\nКомпания: ${company}")
         println()
     }
 }
@@ -14,6 +14,7 @@ fun main() {
         DirectoryPhoneThree("Жанна", 8999111111, "Компания4"),
         DirectoryPhoneThree("Ибрагим", 8999000000, "Компания5")
     )
-    listPhoneDirectory.forEach { contact -> contact.printDirectory() }
+    val newListPhoneDirectory = listPhoneDirectory.mapNotNull { if (it.company == null) null else it }
+    newListPhoneDirectory.forEach { contact -> contact.printDirectory() }
 
 }
