@@ -15,7 +15,7 @@ fun main() {
         println("Введите номер телефона")
         val phoneNumber = readln().toLongOrNull()
         if (phoneNumber != null) {
-            println("Введите имя и номер телефона")
+            println("Введите имя и компанию")
             listPhoneDirectory.add(DirectoryPhoneThree(readln(), phoneNumber, readln()))
         }
     }
