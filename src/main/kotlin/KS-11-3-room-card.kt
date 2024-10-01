@@ -11,7 +11,6 @@ fun main() {
     roomCard.updateStatus()
     roomCard.listParticipants.forEach { listUser -> println("${listUser.nickname}: ${listUser.status}") }
 
-
 }
 
 class RoomCard(
