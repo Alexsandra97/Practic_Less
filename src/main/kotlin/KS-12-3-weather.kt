@@ -1,8 +1,8 @@
 const val KELVIN_TEMPERATURE = 273.15f
 
 class NewWeatherData(_dayTemperature: Int, _nightTemperature: Int, _presencePrecipitation: Boolean) {
-    var dayTemperature = _dayTemperature
-    var nightTemperature = _nightTemperature
+    var dayTemperature = (_dayTemperature + KELVIN_TEMPERATURE).toInt()
+    var nightTemperature = (_nightTemperature+ KELVIN_TEMPERATURE).toInt()
     var presencePrecipitation = _presencePrecipitation
 
     fun printParameters() {
@@ -12,10 +12,10 @@ class NewWeatherData(_dayTemperature: Int, _nightTemperature: Int, _presencePrec
 
 fun main() {
 
-    val firstObject = NewWeatherData((23 + KELVIN_TEMPERATURE).toInt(), (16 + KELVIN_TEMPERATURE).toInt(), false)
+    val firstObject = NewWeatherData(23, 16, false)
     firstObject.printParameters()
 
-    val secondObject = NewWeatherData((21 + KELVIN_TEMPERATURE).toInt(), (12 + KELVIN_TEMPERATURE).toInt(), true)
+    val secondObject = NewWeatherData(21, 12, true)
     secondObject.printParameters()
 
 }
