@@ -28,7 +28,7 @@ class IcebreakerTwo(
     speed: Int = 15,
     loadCapacity: Int = 215800,
     capacity: Int = 1000,
-    val breakIce: Boolean = true
+    val isBreakIce: Boolean = true
 ) : LinerTwo(speed, loadCapacity, capacity) {
 
     override fun load() {
@@ -37,9 +37,8 @@ class IcebreakerTwo(
 
     override fun outputParameters() {
         super.outputParameters()
-        println("Может колоть лёд: $breakIce")
+        println("Может колоть лёд: $isBreakIce")
     }
-
 
 }
 
