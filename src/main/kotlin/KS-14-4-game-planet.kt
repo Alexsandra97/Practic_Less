@@ -4,9 +4,9 @@ open class CelestialBodies(val nameCelestialBodies: String) {
     }
 }
 
-class Planet(nameCelestialBodies: String, val listSatellite: List<Satellite>): CelestialBodies(nameCelestialBodies)
+class Planet(nameCelestialBodies: String, val listSatellite: List<Satellite>) : CelestialBodies(nameCelestialBodies)
 
-class Satellite(nameCelestialBodies: String): CelestialBodies(nameCelestialBodies)
+class Satellite(nameCelestialBodies: String) : CelestialBodies(nameCelestialBodies)
 
 fun main() {
 
@@ -14,6 +14,6 @@ fun main() {
     println("Название планеты:")
     planet.printName()
     println("Название ее спутников:")
-    planet.listSatellite.forEach{it.printName()}
+    planet.listSatellite.forEach { it.printName() }
 
 }
