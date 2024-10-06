@@ -1,12 +1,13 @@
-abstract class Forum {
+abstract class Users {
     abstract val user: String
+    abstract val id: Int
     abstract fun readForum()
     abstract fun writeMessage()
     abstract fun deleteMessage()
     abstract fun deleteUser()
 }
 
-class RegularUser(override val user: String) : Forum() {
+class RegularUser(override val user: String, override val id: Int) : Users() {
     override fun readForum() {
         println("$user прочитал сообщение")
     }
@@ -15,16 +16,13 @@ class RegularUser(override val user: String) : Forum() {
         println("$user написал сообщение")
     }
 
-    override fun deleteMessage() {
-        println("$user не может удалить сообщение")
-    }
+    override fun deleteMessage() {}
+    override fun deleteUser() {}
 
-    override fun deleteUser() {
-        println("$user не может удалить пользователя")
-    }
+
 }
 
-class Administrator(override val user: String) : Forum() {
+class Administrator(override val user: String, override val id: Int) : Users() {
     override fun readForum() {
         println("$user прочитал сообщение")
     }
@@ -34,10 +32,10 @@ class Administrator(override val user: String) : Forum() {
     }
 
     override fun deleteMessage() {
-        println("$user удалил сообщение")
+        println("$user удалил сообщение с id $id")
     }
 
     override fun deleteUser() {
-        println("$user удалил пользователя")
+        println("$user удалил пользователя с id $id")
     }
 }
