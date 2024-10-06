@@ -1,16 +1,18 @@
-interface Forum {
-    var id: Int
-    var text: String
+class Forum private constructor(
+    var id: Int = 0,
+    var text: String,
+    var listUser: MutableList<String> = mutableListOf()
+) {
 
-    fun createNewUser(userName: String): String{
-        text = userName
-        ++id
-        return text
+
+    fun createNewUser(vararg text: String): Forum  {
+        listUser.add(text.toString())
+        return Forum(++id, text.toString())
     }
 
     fun createNewMessae(userId: Int): String {
         val message = listOf<MemberForum>()
-        if ((message.find { it.userId == userId}) != null) {
+        if ((message.find { it.userId == userId }) != null) {
             text = readln()
             id = userId
         }
@@ -27,7 +29,7 @@ class MemberForum(
     val userName: String,
 ) : Forum {
 
-    override var id: Int = 0
+    override var id: Int
         get() = userId
     override var text: String = ""
         get() = userName
