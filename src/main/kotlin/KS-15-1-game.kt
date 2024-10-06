@@ -1,25 +1,29 @@
 interface FlyingCreatures {
     val name: String
     fun move() {
-        println(" летает")
+        print(" летает")
     }
 }
 
 interface FloatingCreatures {
     val name: String
     fun move() {
-        println(" плавает")
+        print(" плавает")
     }
 }
 
-class Duck(override val name: String = "Утка") : FlyingCreatures {
+class Duck(override val name: String = "Утка") : FlyingCreatures,FloatingCreatures {
     init {
         print(name)
     }
 
     override fun move() {
-        super.move()
+        super<FlyingCreatures>.move()
+        print(" и")
+        super<FloatingCreatures>.move()
+        println()
     }
+
 }
 
 class Seagull(override val name: String = "Чайка") : FlyingCreatures {
@@ -29,6 +33,7 @@ class Seagull(override val name: String = "Чайка") : FlyingCreatures {
 
     override fun move() {
         super.move()
+        println()
     }
 }
 
