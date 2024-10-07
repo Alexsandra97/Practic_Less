@@ -5,9 +5,11 @@ class Forum private constructor(
 ) {
 
 
-    fun createNewUser(vararg text: String): Forum  {
-        listUser.add(text.toString())
-        return Forum(++id, text.toString())
+    fun createNewUser(text: String): String {
+        val MemberForum = text.toString()
+        listUser.add(MemberForum)
+        ++id
+        return MemberForum
     }
 
     fun createNewMessae(userId: Int): String {
