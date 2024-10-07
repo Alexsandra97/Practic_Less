@@ -1,13 +1,11 @@
-abstract class Users {
+abstract class User {
     abstract val user: String
     abstract val id: Int
     abstract fun readForum()
     abstract fun writeMessage()
-    abstract fun deleteMessage()
-    abstract fun deleteUser()
 }
 
-class RegularUser(override val user: String, override val id: Int) : Users() {
+class RegularUser(override val user: String, override val id: Int) : User() {
     override fun readForum() {
         println("$user прочитал сообщение")
     }
@@ -16,13 +14,9 @@ class RegularUser(override val user: String, override val id: Int) : Users() {
         println("$user написал сообщение")
     }
 
-    override fun deleteMessage() {}
-    override fun deleteUser() {}
-
-
 }
 
-class Administrator(override val user: String, override val id: Int) : Users() {
+class Administrator(override val user: String, override val id: Int) : User() {
     override fun readForum() {
         println("$user прочитал сообщение")
     }
@@ -31,11 +25,11 @@ class Administrator(override val user: String, override val id: Int) : Users() {
         println("$user написал сообщение")
     }
 
-    override fun deleteMessage() {
+    fun deleteMessage() {
         println("$user удалил сообщение с id $id")
     }
 
-    override fun deleteUser() {
+    fun deleteUser() {
         println("$user удалил пользователя с id $id")
     }
 }
