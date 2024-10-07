@@ -1,6 +1,4 @@
 interface Search {
-    val name: String
-    val quantityStock: Int
 
     fun findAccessories() {
         println("Выполняется поиск")
@@ -8,9 +6,15 @@ interface Search {
 
 }
 
-class Accessories(override val name: String, override val quantityStock: Int): Search
+open class Categories(
+    val name: String,
+    val quantityStock: Int
+)
 
-class Instruments(override val name: String, override val quantityStock: Int): Search {
+class Accessories(name: String, quantityStock: Int) : Search,
+    Categories(name, quantityStock)
+
+class Instruments(name: String, quantityStock: Int) : Search, Categories(name, quantityStock)  {
     override fun findAccessories() {
         super.findAccessories()
     }
