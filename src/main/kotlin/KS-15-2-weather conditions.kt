@@ -1,23 +1,30 @@
-abstract class WeatherServer{
-    abstract val WeatherStationStat: Int
-    abstract fun sendMessage(WeatherStationStat: Int)
-}
-
-class Temperature(override val WeatherStationStat: Int): WeatherServer() {
-    override fun sendMessage(WeatherStationStat: Int) {
-        println("Температура: $WeatherStationStat")
+class WeatherServer() {
+    fun sendMessage(Object: WeatherStationStats) {
+        if (Object is Temperature) {
+            println("Температура: ${Object.value}")
+        } else if (Object is PrecipitationAmount) {
+            println("Количество осадков: ${Object.value}")
+        }
     }
 }
 
-class PrecipitationAmount(override val WeatherStationStat: Int): WeatherServer() {
-    override fun sendMessage(WeatherStationStat: Int) {
-        println("Количество осадков: $WeatherStationStat")
+abstract class WeatherStationStats {
+    abstract val value: Int
+}
+
+class Temperature(override val value: Int) : WeatherStationStats() {
+    init {
+        WeatherServer().sendMessage(this)
+    }
+}
+
+class PrecipitationAmount(override val value: Int) : WeatherStationStats() {
+    init {
+        WeatherServer().sendMessage(this)
     }
 }
 
 fun main() {
     val object1 = Temperature(13)
-    object1.sendMessage(13)
     val object2 = PrecipitationAmount(7)
-    object2.sendMessage(7)
 }
