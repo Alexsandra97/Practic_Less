@@ -1,7 +1,6 @@
-class User(val login: String, protected val password: String) {
+class User(val login: String, private val password: String) {
     fun validation(passwordCheck: String): Boolean {
-        val isResultCheck = (this.password == passwordCheck)
-        return isResultCheck
+        return (this.password == passwordCheck)
     }
 }
 
