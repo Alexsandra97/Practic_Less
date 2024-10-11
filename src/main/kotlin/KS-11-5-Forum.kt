@@ -1,35 +1,36 @@
-class Forum private constructor(
+
+open class Forum(
     var id: Int = 0,
     var text: String,
     var listUser: MutableList<String> = mutableListOf()
 ) {
 
-
     fun createNewUser(text: String): String {
-        val MemberForum = text.toString()
-        listUser.add(MemberForum)
+        val memberForum = text.toString()
+        listUser.add(memberForum)
         ++id
-        return MemberForum
+        return memberForum
     }
 
     fun createNewMessae(userId: Int): String {
-        val message = listOf<MemberForum>()
-        if ((message.find { it.userId == userId }) != null) {
-            text = readln()
-            id = userId
-        }
-        return text
+        val message = readln()
+        id = userId
+       // if ((message.find { it.userId == userId }) != null) {
+        //    text = readln()
+         //   id = userId
+       // }
+
+        if (listUser.find { it })
+
     }
 }
 
-fun printThread() {
-    println("")
+
+fun main() {
+    val a1 = Forum("")
 }
 
-class MemberForum(
-    val userId: Int,
-    val userName: String,
-) : Forum {
+class MemberForum(override val id: Int, override val text: String: String):Forum(id, text) {
 
     override var id: Int
         get() = userId
