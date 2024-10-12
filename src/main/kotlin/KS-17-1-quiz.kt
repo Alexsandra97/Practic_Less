@@ -1,7 +1,8 @@
 class Quiz(question: String, answer: String) {
-    val question: String = "Вопросик?"
+    val question = question
         get() = field
-    var answer: String = "Ответ"
+    var answer: String = answer
+        get() = field
         set(value: String) {
             field = value
         }
@@ -9,5 +10,5 @@ class Quiz(question: String, answer: String) {
 }
 
 fun main() {
-    val quiz = Quiz()
+    val quiz = Quiz("2+2","4")
 }
