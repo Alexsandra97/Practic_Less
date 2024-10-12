@@ -1,18 +1,22 @@
-class OnlineOrdering(private val numberOrdering: Int = 0, var readyStatus: String = "") {
+class OnlineOrdering(private val numberOrdering: Int = 0) {
+    private var readyStatus: String = ""
 
-    fun changeStatus() {
+    private fun changeStatus(newStatus: String) {
         println("Для смены статуса отправте заявку менеджеру с новым статусом")
         val newStatus = readln()
-        sendRequest(newStatus)
+    }
+
+    fun sendRequest(newStatus: String) {
+        readyStatus = newStatus
+        changeStatus(newStatus)
     }
 }
 
-fun sendRequest(newStatus: String) {
-    OnlineOrdering().readyStatus = newStatus
-}
+
 
 fun main() {
-    val order = OnlineOrdering(4, "close")
-    order.changeStatus()
-    println("${order.readyStatus}")
+    val order = OnlineOrdering(4)
+    println(order)
+    order.sendRequest("В работе")
+    println()
 }
