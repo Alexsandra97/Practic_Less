@@ -1,33 +1,17 @@
 interface MovementCars {
-    fun arriveCar() {
-        println("Машина приехала.")
-    }
+    fun arriveCar()
 }
 
 interface MovementPassengers {
-    fun transportPassenger(maxNumberPassengers: Int, numberPassengers: Int) {
-        if (maxNumberPassengers >= numberPassengers) {
-            println("${numberPassengers} пассажира сели в машину")
-        }
-        else {
-            println("Слишком большое количество пассажиров. Может быть стоит заказать еще машину")
-        }
-    }
+    val numberPassengers: Int
+    val maxNumberPassengers: Int
+    fun transportPassenger(maxNumberPassengers: Int, numberPassengers: Int)
 }
 
 interface MovementCargo {
-    fun transportCargo(maxNumberCargo: Int, numberCargo: Int) {
-        if (maxNumberCargo >= numberCargo) println("${numberCargo} т. груза загрузили в машину")
-        else println("Слишком большое количество груза. Может быть стоит заказать еще машину")
-    }
-}
-
-
-abstract class Cars {
-    abstract val maxNumberPassengers: Int
-    abstract val maxNumberCargo: Int
-    abstract val numberPassengers: Int
-    abstract val numberCargo: Int
+    val numberCargo: Int
+    val maxNumberCargo: Int
+    fun transportCargo(maxNumberCargo: Int, numberCargo: Int)
 }
 
 class Trucks(
@@ -35,34 +19,41 @@ class Trucks(
     override val numberPassengers: Int,
     override val maxNumberPassengers: Int = 1,
     override val maxNumberCargo: Int = 2,
-) : Cars(), MovementCars,
+) : MovementCars,
     MovementPassengers, MovementCargo {
     override fun arriveCar() {
-        super.arriveCar()
+        println("Машина приехала.")
     }
 
     override fun transportCargo(maxNumberCargo: Int, numberCargo: Int) {
-        super.transportCargo(maxNumberCargo, numberCargo)
+        if (maxNumberCargo >= numberCargo) println("${numberCargo} т. груза загрузили в машину")
+        else println("Слишком большое количество груза. Может быть стоит заказать еще машину")
     }
 
     override fun transportPassenger(maxNumberPassengers: Int, numberPassengers: Int) {
-        super.transportPassenger(maxNumberPassengers, numberPassengers)
+        if (maxNumberPassengers >= numberPassengers) {
+            println("${numberPassengers} пассажира сели в машину")
+        } else {
+            println("Слишком большое количество пассажиров. Может быть стоит заказать еще машину")
+        }
     }
 }
 
 class PassengerCars(
-    override val numberCargo: Int,
     override val numberPassengers: Int,
     override val maxNumberPassengers: Int = 3,
-    override val maxNumberCargo: Int = 0,
-    ) : Cars(), MovementCars,
-    MovementPassengers, MovementCargo {
+) : MovementCars,
+    MovementPassengers {
     override fun arriveCar() {
-        super.arriveCar()
+        println("Машина приехала.")
     }
 
     override fun transportPassenger(maxNumberPassengers: Int, numberPassengers: Int) {
-        super.transportPassenger(maxNumberPassengers, numberPassengers)
+        if (maxNumberPassengers >= numberPassengers) {
+            println("${numberPassengers} пассажира сели в машину")
+        } else {
+            println("Слишком большое количество пассажиров. Может быть стоит заказать еще машину")
+        }
     }
 }
 
@@ -74,12 +65,12 @@ fun main() {
     car1.transportPassenger(car1.maxNumberPassengers, car1.numberPassengers)
     println()
 
-    val car2 = PassengerCars(0, 3)
+    val car2 = PassengerCars(3)
     car2.arriveCar()
     car2.transportPassenger(car2.maxNumberPassengers, car2.numberPassengers)
     println()
 
-    val car3 = PassengerCars(0, 2)
+    val car3 = PassengerCars(2)
     car3.arriveCar()
-    car2.transportPassenger(car3.maxNumberPassengers, car3.numberPassengers)
+    car3.transportPassenger(car3.maxNumberPassengers, car3.numberPassengers)
 }
