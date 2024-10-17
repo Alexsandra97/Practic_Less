@@ -1,9 +1,10 @@
 open class Dice {
     open fun rollDice() = ""
+    open val numberFaces: Int = 0
 }
 
 class FourSidedDice(
-    private val numberFaces: Int = 4
+    override val numberFaces: Int = 4
 ) : Dice() {
     override fun rollDice(): String {
         return ("На кубике с $numberFaces гранями выпало: ${(1..numberFaces).random()}")
@@ -11,7 +12,7 @@ class FourSidedDice(
 }
 
 class SixSidedDice(
-    private val numberFaces: Int = 6
+    override val numberFaces: Int = 6
 ) : Dice() {
     override fun rollDice(): String {
         return ("На кубике с $numberFaces гранями выпало: ${(1..numberFaces).random()}")
@@ -19,7 +20,7 @@ class SixSidedDice(
 }
 
 class EightSidedDice(
-    private val numberFaces: Int = 8
+    override val numberFaces: Int = 8
 ) : Dice() {
     override fun rollDice(): String {
         return ("На кубике с $numberFaces гранями выпало: ${(1..numberFaces).random()}")
