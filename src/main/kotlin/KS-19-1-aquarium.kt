@@ -7,7 +7,7 @@ enum class Fish(val fish: String) {
 
 fun main() {
 
-    for (cardType in Fish.values()) {
+    for (cardType in Fish.entries) {
         println("${cardType.fish} можно добавить в аквариум")
     }
 
