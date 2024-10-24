@@ -1,7 +1,4 @@
-class Player(
-    val name: String,
-    var currentHealth: Int,
-    val maxHealth: Int
+class Player(val name: String, var currentHealth: Int, val maxHealth: Int
 )
 
 fun main() {
