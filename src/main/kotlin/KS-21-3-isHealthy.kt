@@ -4,12 +4,12 @@ class Player(
     val maxHealth: Int
 )
 
-fun Player.isHealthy() {
-    if (this.currentHealth == this.maxHealth) println(true)
-    else println(false)
+fun Player.isHealthy(): Boolean {
+    if (this.currentHealth == this.maxHealth) return true
+    else return false
 }
 
 fun  main() {
-    val player = Player("игрок", 5, 5)
-    player.isHealthy()
+    val player = Player("игрок", 4, 5)
+    println(player.isHealthy())
 }
