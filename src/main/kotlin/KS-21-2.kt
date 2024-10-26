@@ -1,7 +1,5 @@
 fun List<Int>.evenNumbersSum() {
-    var sumNumbers = 0
-    this.forEach{it -> if (it%2 == 0 )sumNumbers += it}
-    println(sumNumbers)
+    println(this.filter { it % 2 == 0 }.sum())
 }
 
 fun main() {
