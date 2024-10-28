@@ -3,21 +3,22 @@ fun main() {
     val robot = Robot()
 
     robot.say()
-    robot.phrase = robot.setModifier(robot.phrase, inventing = addLambda)
+    robot.phrase = robot.setModifier(robot.phrase, modifier = addLambda)
     robot.say()
 
 }
 
 class Robot() {
     var phrase = listOf<String>("Добрый день", "Привет", "Здравствуйте", "Hello", "Hi")
+    private var modifier: (String) -> String = { it }
 
     fun say() {
-        println(phrase.random().toString())
+        println(modifier(phrase.random().toString()))
     }
 
-    fun setModifier(phrase: List<String>, inventing: (List<String>) -> List<String>): List<String> {
+    fun setModifier(phrase: List<String>, modifier: (List<String>) -> List<String>): List<String> {
         val phrase: List<String> = phrase
         println("Модификатор включен")
-        return inventing(phrase)
+        return modifier(phrase)
     }
 }
