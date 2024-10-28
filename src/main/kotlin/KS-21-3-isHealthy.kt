@@ -5,8 +5,7 @@ class Player(
 )
 
 fun Player.isHealthy(): Boolean {
-    if (this.currentHealth == this.maxHealth) return true
-    else return false
+    return this.currentHealth == this.maxHealth
 }
 
 fun  main() {
