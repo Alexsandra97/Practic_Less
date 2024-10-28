@@ -18,10 +18,7 @@ fun main() {
         listCards.add(Cabinet(readln(), gender(readln())))
 
         if (listCards.count() == 5) listCards.forEach { it -> println(it) }
-        println("Хотите добавить еще одну карточку?(да/нет)")
-        val answer = readln()
 
-        if (answer != "да") isFlag = false
     }
 
 }
