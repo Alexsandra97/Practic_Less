@@ -1,9 +1,8 @@
 fun main() {
-    val addLambda = { phrase: List<String> -> phrase.map { it -> it.reversed() } }
     val robot = Robot()
 
     robot.say()
-    robot.phrase = robot.setModifier(robot.phrase, modifier = addLambda)
+    robot.setModifier { it -> it.reversed() }
     robot.say()
 
 }
@@ -16,9 +15,8 @@ class Robot() {
         println(modifier(phrase.random().toString()))
     }
 
-    fun setModifier(phrase: List<String>, modifier: (List<String>) -> List<String>): List<String> {
-        val phrase: List<String> = phrase
+    fun setModifier(modifier: (String) -> String) {
+        this.modifier = modifier
         println("Модификатор включен")
-        return modifier(phrase)
     }
 }
